@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>E-Commerce Product Page</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            line-height: 1.6;
+            color: #333;
+        }
+
+        /* Navigation Bar */
+        .navbar {
+            background-color: #333;
+            padding: 1rem;
+        }
+
+        .navbar ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .navbar a {
+            color: white;
+            text-decoration: none;
+            font-size: 1.1rem;
+        }
+
+        .navbar a:hover {
+            color: #f0c14b;
+        }
+
+        /* Product Section */
+        .product-container {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+        }
+
+        .product-image {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-image img {
+            width: 100%;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .product-image img:hover {
+            transform: scale(1.05);
+        }
+
+        .thumbnail-gallery {
+            display: flex;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .thumbnail-gallery img {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 4px;
+            cursor: pointer;
+            opacity: 0.7;
+        }
+
+        .thumbnail-gallery img:hover {
+            opacity: 1;
+        }
+
+        .product-details {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .product-details h1 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .product-details p {
+            margin-bottom: 1rem;
+            color: #555;
+        }
+
+        .price {
+            font-size: 1.5rem;
+            color: #b12704;
+            margin-bottom: 1rem;
+        }
+
+        .add-to-cart {
+            background-color: #f0c14b;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            font-size: 1rem;
+            cursor: pointer;
+            border-radius: 4px;
+            transition: background-color 0.3s ease;
+        }
+
+        .add-to-cart:hover {
+            background-color: #e0b038;
+        }
+
+        /* Reviews Section */
+        .reviews {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .reviews h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .review {
+            border-bottom: 1px solid #ddd;
+            padding: 1rem 0;
+        }
+
+        /* Related Products */
+        .related-products {
+            max-width: 1200px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .related-products h2 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+        }
+
+        .related-item img {
+            width: 100%;
+            border-radius: 8px;
+        }
+
+        .related-item h3 {
+            font-size: 1rem;
+            margin: 0.5rem 0;
+        }
+
+        .related-item p {
+            color: #b12704;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .navbar ul {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            .product-container {
+                flex-direction: column;
+            }
+
+            .product-image, .product-details {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">Shop</a></li>
+            <li><a href="#">Contact</a></li>
+            <li><a href="#">About</a></li>
+        </ul>
+    </nav>
+
+    <!-- Product Section -->
+    <div class="product-container">
+        <div class="product-image">
+            <img src="https://images.squarespace-cdn.com/content/v1/5ae8bd2f89c1723a6f6f557b/1565794679412-QOSVO1NO2JF104SBAU4R/AdobeStock_237119664.jpeg" alt="Product Image" id="main-image">
+            <div class="thumbnail-gallery">
+                <img src="https://1.bp.blogspot.com/-_iQv9PpBYE4/XbA7P3fFNZI/AAAAAAAAAHg/edeY24SJEGQ8wIGY2VEnDFztuc55a8W7wCLcBGAsYHQ/s1600/boat%2Brockerz%2B400%2BOn-ear%2Bbluetooth%2Bheadphones%2Breview.jpg" alt="Thumbnail 1" onclick="changeImage(this.src)">
+                <img src="https://cdn.mos.cms.futurecdn.net/qMRagLMmCvMsHQHfvmWT2e.jpg" alt="Thumbnail 2" onclick="changeImage(this.src)">
+                <img src="https://th.bing.com/th/id/OIP.ME7w8biTCoGCGAD20L1S6wHaHX?rs=1&pid=ImgDetMain" alt="Thumbnail 3" onclick="changeImage(this.src)">
+            </div>
+        </div>
+        <div class="product-details">
+            <h1>Sample Product</h1>
+            <p class="price">$29.99</p>
+            <p>This is a high-quality sample product designed to meet your needs. It features a sleek design, durability, and excellent performance for everyday use.</p>
+            <button class="add-to-cart">Add to Cart</button>
+        </div>
+    </div>
+
+    <!-- Customer Reviews -->
+    <div class="reviews">
+        <h2>Customer Reviews</h2>
+        <div class="review">
+            <p><strong>John Doe</strong> - ★★★★★</p>
+            <p>Amazing product! Works as advertised and looks great.</p>
+        </div>
+        <div class="review">
+            <p><strong>Jane Smith</strong> - ★★★★☆</p>
+            <p>Really good quality, but shipping took a bit long.</p>
+        </div>
+    </div>
+
+    <!-- Related Products -->
+    <div class="related-products">
+        <h2>Related Products</h2>
+        <div class="related-grid">
+            <div class="related-item">
+                                <img src="https://1.bp.blogspot.com/-_iQv9PpBYE4/XbA7P3fFNZI/AAAAAAAAAHg/edeY24SJEGQ8wIGY2VEnDFztuc55a8W7wCLcBGAsYHQ/s1600/boat%2Brockerz%2B400%2BOn-ear%2Bbluetooth%2Bheadphones%2Breview.jpg alt="Related Product 1">
+                <h3>Related Product 1</h3>
+                <p>$19.99</p>
+            </div>
+            <div class="related-item">
+                <img src="https://cdn.mos.cms.futurecdn.net/qMRagLMmCvMsHQHfvmWT2e.jpg" alt="Related Product 2">
+                <h3>Related Product 2</h3>
+                <p>$24.99</p>
+            </div>
+            <div class="related-item">
+                <img src="https://th.bing.com/th/id/OIP.ME7w8biTCoGCGAD20L1S6wHaHX?rs=1&pid=ImgDetMain" alt="Related Product 3">
+                <h3>Related Product 3</h3>
+                <p>$14.99</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function changeImage(src) {
+            document.getElementById('main-image').src = src;
+        }
+    </script>
+</body>
+</html>
